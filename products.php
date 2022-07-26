@@ -1,3 +1,18 @@
+<?php
+session_start();
+if(isset($_POST['email']) && isset($_POST['password'])){
+    if
+
+
+}
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,12 +1,7 @@
 <?php
-if(!isset($_POST['email']) ||  filter_var($_POST['email'],FILTEDR_VALIDATE_EMAIL) || !isset($_POST['password'])
-
-){
-
-
-
-}
-
+session_start();
+$email = $_POST["email"];
+$_SESSION['users'] = $email;
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +19,7 @@ if(!isset($_POST['email']) ||  filter_var($_POST['email'],FILTEDR_VALIDATE_EMAIL
         <div class="messagError">
             <?php
 
+            
             ?>
         </div>
         <form action="products.php" method="post">
