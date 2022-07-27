@@ -1,9 +1,4 @@
-<?php
-session_start();
-$email = $_POST["email"];
-$_SESSION['users'] = $email;
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +11,9 @@ $_SESSION['users'] = $email;
 <body>
     <div class="container">
         <h1>Formulaire de connexion</h1>
-        <div class="messagError">
-            <?php
-
-            
-            ?>
-        </div>
-        <form action="products.php" method="post">
+        
+         
+        <form action="" method="post">
             <div class="email">
                 
                 <input type="email" name="email" id="email" placeholder="Votre email">
@@ -31,7 +22,7 @@ $_SESSION['users'] = $email;
                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
             </div>
             <div class="buton">
-                <button type="submit">Se connecter</button>
+            <input type="button" name="envoyer" value="connexion">
             </div>
 </form>
    </div>

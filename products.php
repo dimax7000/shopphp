@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(isset($_POST['email']) && isset($_POST['password'])){
-    if
-
-
+require 'function/verifierConnexion.php';
+if(!est_connecter()){
+    header(Location: login.php);
 }
+
 
 
 
