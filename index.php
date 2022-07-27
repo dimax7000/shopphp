@@ -1,4 +1,33 @@
+<?php
+require ('doc/dbconnexion.php');
+if(isset($_POST['envoyer'])){
 
+if(!empty($_POST['email']) AND !empty($_POST['password'])){
+
+$email = htmlspecialchars($_POST['email']);
+$password = htmlspecialchars($_POST['password']);
+ $bd =  $connexiondb->prepare['SELECT * FROM users WHERE email = ? password =?'];
+ $bd -> execute(array($email,$password));
+ if($bd ->rowCount()>0){
+   
+
+
+ }else{
+    echo("Votre email ou mot de passe est incorrect");
+ }
+
+}else{
+
+
+    echo("Vous devez completer tous les champs!");
+}
+
+
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +41,7 @@
     <div class="container">
         <h1>Formulaire de connexion</h1>
         
+        
          
         <form action="" method="post">
             <div class="email">
@@ -22,7 +52,7 @@
                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
             </div>
             <div class="buton">
-            <input type="button" name="envoyer" value="connexion">
+            <input type="submit" name="envoyer" value="connexion">
             </div>
 </form>
    </div>

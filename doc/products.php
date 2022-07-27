@@ -1,15 +1,15 @@
 <?php
 session_start();
-require 'function/verifierConnexion.php';
+require 'doc/dbconnexion.php';
+require 'doc/function/verifierConnexion.php';
 if(!est_connecter()){
     header(Location: login.php);
 }
+if(isset($_POST['email']) && isset($_POST['password'])){
+        if()
+        
 
-
-
-
-
-
+}
 ?>
 
 
@@ -27,7 +27,7 @@ if(!est_connecter()){
         <div class="container">
 
 
-
+<h1>Liste des produits</h1>
 
 
         </div>
