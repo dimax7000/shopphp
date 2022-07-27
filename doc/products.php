@@ -1,17 +1,3 @@
-<?php
-session_start();
-require 'doc/dbconnexion.php';
-require 'doc/function/verifierConnexion.php';
-if(!est_connecter()){
-    header(Location: login.php);
-}
-if(isset($_POST['email']) && isset($_POST['password'])){
-        if()
-        
-
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +5,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asset/produit.css">
+    <link rel="stylesheet" href="../asset/produit.css">
     <title>Liste des produits</title>
 </head>
 <body>

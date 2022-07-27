@@ -1,4 +1,5 @@
 <?php
+session_start() ;
 require ('doc/dbconnexion.php');
 if(isset($_POST['envoyer'])){
 
@@ -6,9 +7,11 @@ if(!empty($_POST['email']) AND !empty($_POST['password'])){
 
 $email = htmlspecialchars($_POST['email']);
 $password = htmlspecialchars($_POST['password']);
- $bd =  $connexiondb->prepare['SELECT * FROM users WHERE email = ? password =?'];
+ $bd =  $connexiondb->prepare('SELECT * FROM users WHERE email = ? AND password1 =?');
  $bd -> execute(array($email,$password));
- if($bd ->rowCount()>0){
+ if($bd ->rowCount() >0){
+    header('Location: doc/products.php');
+    $_SESSION['email'] = $email;
    
 
 
@@ -46,10 +49,10 @@ $password = htmlspecialchars($_POST['password']);
         <form action="" method="post">
             <div class="email">
                 
-                <input type="email" name="email" id="email" placeholder="Votre email">
+                <input type="email" name="email" id="email" placeholder="Votre email" autocompletion="off">
             </div>
             <div class="password">
-               <input type="password" name="password" id="password" placeholder="Votre mot de passe">
+               <input type="password" name="password" id="password" placeholder="Votre mot de passe" autocompletion="off">
             </div>
             <div class="buton">
             <input type="submit" name="envoyer" value="connexion">
