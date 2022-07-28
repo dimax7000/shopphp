@@ -1,33 +1,5 @@
 <?php
-session_start() ;
-require ('doc/dbconnexion.php');
-if(isset($_POST['envoyer'])){
-
-if(!empty($_POST['email']) AND !empty($_POST['password'])){
-
-$email = htmlspecialchars($_POST['email']);
-$password = htmlspecialchars($_POST['password']);
- $bd =  $connexiondb->prepare('SELECT * FROM users WHERE email = ? AND password1 =?');
- $bd -> execute(array($email,$password));
- if($bd ->rowCount() >0){
-    header('Location: doc/products.php');
-    $_SESSION['email'] = $email;
-   
-
-
- }else{
-    echo("Votre email ou mot de passe est incorrect");
- }
-
-}else{
-
-
-    echo("Vous devez completer tous les champs!");
-}
-
-
-}
-
+require 'dbconnexion.php';
 
 
 ?>
